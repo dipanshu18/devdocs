@@ -55,10 +55,10 @@ const authLinks: {
 ];
 
 export async function Navbar() {
-  const session = await (await cookies()).get("session");
+  const session = (await cookies()).get("session");
 
   return (
-    <nav className="sticky top-0 bg-white border-b py-4 px-8 z-10">
+    <nav className="sticky top-0 backdrop-blur-md border-b py-4 px-8 z-10">
       <div className="max-w-3xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <div className="md:hidden">
@@ -68,7 +68,7 @@ export async function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side={"left"}
-                className="flex flex-col min-h-full text-left"
+                className="flex flex-col justify-between min-h-full text-left"
               >
                 <SheetHeader>
                   <SheetTitle className="flex items-center text-2xl text-left">
@@ -82,13 +82,13 @@ export async function Navbar() {
                     />
                     <Link href={"/"}>Devdocs</Link>
                   </SheetTitle>
-                  <ul className="my-2 space-y-2 text-left">
+                  <ul className="my-2 text-left">
                     {session
                       ? authLinks.map((item, idx) => (
                           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                           <SheetClose asChild key={idx}>
                             <Link href={item.link}>
-                              <li className="text-lg text-neutral-700">
+                              <li className="my-3 text-lg text-neutral-700">
                                 {item.title}
                               </li>
                             </Link>
@@ -98,7 +98,7 @@ export async function Navbar() {
                           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                           <SheetClose asChild key={idx}>
                             <Link href={item.link}>
-                              <li className="text-lg text-neutral-700">
+                              <li className="my-3 text-lg text-neutral-700">
                                 {item.title}
                               </li>
                             </Link>
