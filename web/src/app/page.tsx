@@ -65,7 +65,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 place-content-center p-5 md:p-0">
           <div className="space-y-2 text-center md:text-left">
             <h1 className="text-4xl font-extrabold leading-tight mt-10">
-              Write, Share, <span className="text-emerald-500">Connect</span>{" "}
+              Write, Share, <span className="text-neutral-500">Connect</span>{" "}
               with Fellow Developers
             </h1>
             <p className="text-base text-neutral-600">
@@ -74,9 +74,7 @@ export default function Home() {
             </p>
             <div>
               <Link href={"/signup"}>
-                <Button className="py-3 px-8 h-full bg-emerald-500 hover:bg-emerald-600">
-                  Try creating one
-                </Button>
+                <Button className="py-3 px-8 h-full">Try creating one</Button>
               </Link>
             </div>
           </div>
@@ -147,17 +145,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-center my-10 p-5 md:p-0">
+        <section className="text-center my-32 p-5 md:p-0">
           <h1 className="text-2xl font-semibold">What are you waiting for?</h1>
           <p className="text-base mt-2 text-neutral-700">
             Create an account and get started on your writing journey
           </p>
 
-          <div className="my-5 w-full max-w-md mx-auto">
+          <div className="my-5 w-full max-w-lg mx-auto">
             <Link href={"/signup"}>
-              <Button className="w-full h-full py-3 bg-emerald-500 hover:bg-emerald-600">
-                Get started
-              </Button>
+              <Button className="w-full h-full">Get started</Button>
             </Link>
           </div>
         </section>

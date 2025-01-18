@@ -4,6 +4,7 @@ import { Mail } from "lucide-react";
 
 import ProfiePic from "../../../../../public/profile.jpg";
 import { BlogCard } from "@/components/blog-card";
+import { FollowBtn, UnfollowBtn } from "@/components/follow-unfollow-btn";
 
 export default function OtherUserProfile() {
   return (
@@ -19,8 +20,12 @@ export default function OtherUserProfile() {
             className="w-32 h-32 object-cover rounded-full"
           />
         </div>
-        <div className="md:pl-5 my-2">
-          <h1 className="text-xl font-bold">Full name</h1>
+        <div className="my-2 flex-1">
+          <div className="w-full flex flex-col md:flex-row items-center gap-2 justify-between">
+            <h1 className="text-xl font-bold">Full name</h1>
+            {/* biome-ignore lint/correctness/noConstantCondition: <explanation> */}
+            {false ? <FollowBtn /> : <UnfollowBtn />}
+          </div>
           <p className="flex items-center gap-2 my-2 text-neutral-700">
             <Mail /> Email
           </p>

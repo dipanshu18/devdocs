@@ -11,6 +11,24 @@ export default function Hashtags() {
             <h1># hashtag</h1>
           </div>
         </Link>
+
+        <Link href={"/hashtags/:tag"}>
+          <div className="shadow hover:shadow-lg duration-300 rounded-md p-5">
+            <h1># hashtag</h1>
+          </div>
+        </Link>
+
+        <Link href={"/hashtags/:tag"}>
+          <div className="shadow hover:shadow-lg duration-300 rounded-md p-5">
+            <h1># hashtag</h1>
+          </div>
+        </Link>
+
+        <Link href={"/hashtags/:tag"}>
+          <div className="shadow hover:shadow-lg duration-300 rounded-md p-5">
+            <h1># hashtag</h1>
+          </div>
+        </Link>
       </div>
     </div>
   );
