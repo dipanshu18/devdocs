@@ -9,6 +9,7 @@ import { BlogCard } from "@/components/blog-card";
 export default function UserProfile() {
   return (
     <div>
+      <h1 className="mb-5 text-xl font-bold">Your Profile</h1>
       <div className="flex flex-col md:flex-row items-center mx-auto w-full gap-2">
         <div>
           <Image

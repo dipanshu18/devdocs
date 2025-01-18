@@ -40,7 +40,7 @@ export function BlogCard({
         </div>
         <div className="p-5 space-y-5">
           <div>
-            <h1 className="text-lg font-semibold">
+            <h1 className="text-lg font-medium">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Consequuntur adipisci laborum ullam pariatur quas molestiae labore
               necessitatibus animi.
