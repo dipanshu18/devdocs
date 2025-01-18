@@ -4,13 +4,23 @@ import {
   BellRing,
   LucideChartNoAxesCombined,
   LucideClipboardPen,
+  LucideHome,
   User,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHashtag } from "react-icons/fa";
 
-const homeLinks: { icon: React.ReactNode; title: string; link: string }[] = [
+export const homeLinks: {
+  icon: React.ReactNode;
+  title: string;
+  link: string;
+}[] = [
+  {
+    icon: <LucideHome />,
+    title: "Home",
+    link: "/home",
+  },
   {
     icon: <LucideClipboardPen />,
     title: "Write",
@@ -49,7 +59,7 @@ export default function DashboardLayout({
         <Navbar />
       </div>
       <div className="flex flex-1 flex-col justify-between items-start w-full md:min-h-screen max-w-6xl mx-auto">
-        <main className="flex-1 flex relative">
+        <main className="flex-1 flex relative w-full">
           {/* Aside Section */}
           <aside className="hidden md:flex flex-col justify-between py-5 sticky top-0 w-48 h-dvh border-r px-5">
             <ul className="space-y-5">

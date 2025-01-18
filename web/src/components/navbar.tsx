@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cookies } from "next/headers";
 import { LogoutBtn } from "./logout-btn";
+import { homeLinks } from "@/app/(dashboard)/layout";
 
 const landingLinks: {
   title: string;
@@ -28,29 +29,6 @@ const landingLinks: {
   {
     title: "Working",
     link: "#working",
-  },
-];
-
-const authLinks: {
-  title: string;
-  link: string;
-}[] = [
-  {
-    title: "Trending",
-    link: "",
-  },
-
-  {
-    title: "Hashtags",
-    link: "",
-  },
-  {
-    title: "Notifications",
-    link: "",
-  },
-  {
-    title: "Profile",
-    link: "",
   },
 ];
 
@@ -84,11 +62,12 @@ export async function Navbar() {
                   </SheetTitle>
                   <ul className="my-2 text-left">
                     {session
-                      ? authLinks.map((item, idx) => (
+                      ? homeLinks.map((item, idx) => (
                           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                           <SheetClose asChild key={idx}>
                             <Link href={item.link}>
-                              <li className="my-3 text-lg text-neutral-700">
+                              <li className="my-3 flex items-center gap-2 text-lg text-neutral-700">
+                                {item.icon}
                                 {item.title}
                               </li>
                             </Link>

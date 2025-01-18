@@ -6,7 +6,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between h-dvh">
       <Navbar />
       <main className="flex-1 h-full">{children}</main>
     </div>

@@ -6,10 +6,27 @@ import { MessageSquare } from "lucide-react";
 
 import PrismaImage from "../../public/prisma.png";
 import Link from "next/link";
+import { Delete, Publish, Unpublish } from "./user-blog-action-btn";
 
-export function BlogCard() {
+export function BlogCard({
+  page,
+  type,
+}: {
+  page: "home" | "profile" | "other-profile";
+  type: "published" | "drafts";
+}) {
   return (
-    <Link href={"/home/:id"}>
+    <Link
+      href={
+        page === "home"
+          ? "/home/:id"
+          : page === "other-profile"
+          ? "/home/:id"
+          : type === "published"
+          ? "/profile/blogs/:id"
+          : "/profile/drafts/:id"
+      }
+    >
       <div className="space-y-2 rounded-md shadow hover:shadow-xl transition-shadow duration-300">
         <div>
           <Image
@@ -36,6 +53,13 @@ export function BlogCard() {
 
             <Bookmark />
           </div>
+
+          {page === "profile" && (
+            <div className="flex items-center gap-2">
+              {type === "published" ? <Unpublish /> : <Publish />}
+              <Delete />
+            </div>
+          )}
         </div>
       </div>
     </Link>
