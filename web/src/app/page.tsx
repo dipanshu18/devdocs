@@ -62,7 +62,7 @@ export default function Home() {
       </header>
 
       <main className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 place-content-center p-5 md:p-0">
+        <div className="relative min-h-[70vh] grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center p-5 md:p-0">
           <div className="space-y-2 text-center md:text-left">
             <h1 className="text-4xl font-extrabold leading-tight mt-10">
               Write, Share, <span className="text-neutral-500">Connect</span>{" "}
@@ -92,7 +92,7 @@ export default function Home() {
 
         <section
           id="features"
-          className="my-10 flex flex-col justify-center items-center p-5 md:p-0"
+          className="my-10 min-h-[50vh] flex flex-col justify-center items-center p-5 md:p-0"
         >
           <h1 className="text-2xl font-semibold">Features for Developers</h1>
           <p className="text-base mt-2 text-center text-neutral-600">
@@ -103,7 +103,7 @@ export default function Home() {
             {features.map((item) => (
               <div
                 key={item.title}
-                className="space-y-2 shadow hover:shadow-lg transition-shadow duration-300 rounded-md p-5"
+                className="space-y-2 shadow hover:shadow-md transition-shadow duration-300 rounded-md p-5"
               >
                 <div className="bg-black text-white w-fit p-2 rounded-md">
                   {item.icon}
@@ -117,17 +117,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="working" className="my-10 text-center p-5 md:p-0">
+        <section
+          id="working"
+          className="my-20 min-h-dvh flex flex-col justify-center items-center text-center p-5 md:p-0"
+        >
           <h1 className="text-2xl font-semibold">How it works</h1>
           <p className="text-base mt-2 text-neutral-600">
             Everything you need to create and manage your technical content
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-5">
+          <div className="grid grid-cols-1 gap-5 my-5">
             {working.map((item, idx) => (
               <div
                 // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                 key={idx}
-                className="p-5 shadow hover:shadow-lg transition-shadow duration-300 rounded-md"
+                className="p-5 shadow hover:shadow-md transition-shadow duration-300 rounded-md"
               >
                 <div className="space-y-2">
                   <div className="w-10 h-10 rounded-full bg-black text-white flex justify-center items-center font-extrabold">
@@ -145,16 +148,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-center my-32 p-5 md:p-0">
-          <h1 className="text-2xl font-semibold">What are you waiting for?</h1>
-          <p className="text-base mt-2 text-neutral-700">
-            Create an account and get started on your writing journey
-          </p>
+        <section className="relative text-center my-32 p-5 md:p-0 min-h-[50dvh] flex justify-center items-center  shadow-xl">
+          <div className="absolute top-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:20px_20px] rounded-md" />
+          <div>
+            <h1 className="text-2xl font-semibold text-white">
+              What are you waiting for?
+            </h1>
+            <p className="text-base mt-2 text-neutral-300">
+              Create an account and get started on your writing journey
+            </p>
 
-          <div className="my-5 w-full max-w-lg mx-auto">
-            <Link href={"/signup"}>
-              <Button className="w-full h-full">Get started</Button>
-            </Link>
+            <div className="my-5 w-full max-w-lg mx-auto">
+              <Link href={"/signup"}>
+                <Button className="w-full h-full text-black bg-white hover:bg-neutral-300">
+                  Get started
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
